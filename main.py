@@ -11,7 +11,7 @@ if __name__ == '__main__':
     stock1 = Stock('AAPL')
     stock2 = Stock('FB')
 
-    stocks = [stock1, stock2]
+    stocks = [stock1, stock2, Stock('ATVI')]
 
     with open('test.csv', 'wb') as csvfile:
         datawriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
