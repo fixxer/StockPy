@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from Stock import *
+from stock import StockDescription, StockCompanyProfile
 
 def get_soup(base_url, *args):
     url = base_url.format(*args)

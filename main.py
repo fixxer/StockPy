@@ -1,5 +1,5 @@
 import csv
-from Stock import *
+from stock import StockDescription, StockData
 from data_service import *
 
 if __name__ == '__main__':
