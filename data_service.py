@@ -22,7 +22,8 @@ def GetHistoricalMorningstarData(stockDesc):
     path = 'http://financials.morningstar.com/valuate/valuation-history.action?&t={0}:{1}&type=price-earnings'
     soup = get_soup(path, stockDesc.exchange, stockDesc.ticker)
     stockPEs = soup.div.table.tbody.find_all('tr')[1].find_all('td')
-    return stockPEs
+    pe_values = [v.text for v in stockPEs]
+    return pe_values
 
 if __name__ == '__main__':
     #print company_profile('XNAS', 'FB')
