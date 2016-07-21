@@ -32,5 +32,13 @@ def company_profile_stock(s):
     'Style': rows[8].find_all('td')[0].text
     }
 
+def GetHistoricalMorningstarData(stockDesc):
+    path = 'http://financials.morningstar.com/valuate/valuation-history.action?&t={0}:{1}&type=price-earnings'
+    soup = get_soup(path, stockDesc.exchange, stockDesc.ticker)
+    stockPEs = soup.div.table.tbody.find_all('tr')[1].find_all('td')
+    return stockPEs
+
+
 if __name__ == '__main__':
-    print company_profile('XNAS', 'FB')
+    #print company_profile('XNAS', 'FB')
+    print(GetHistoricalMorningstarData(StockDescription('FB', 'XNAS')))
