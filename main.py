@@ -1,15 +1,19 @@
-import csv
 from stock import StockDescription, StockData
 from data_service import *
+from portfolio_creator import *
+from csv_generator import *
+
 
 if __name__ == '__main__':
 
     #step 1. define portfolio
-    portfolio = [
-        StockDescription('AAPL', 'XNAS'), 
-        StockDescription('FB', 'XNAS'), 
-        StockDescription('ATVI','XNAS')
-    ]
+    #portfolio = [
+    #    StockDescription('AAPL', 'XNAS'),
+    #    StockDescription('FB', 'XNAS'),
+    #    StockDescription('ATVI','XNAS')
+    #]
+
+    portfolio = create_portfolio(1)
 
     # step2. load data
     for s in portfolio:
@@ -23,9 +27,5 @@ if __name__ == '__main__':
 
     #step5. generate output
 
-    with open('Stocks.csv', 'wb') as csvfile:
-        datawriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        for s in portfolio:
-            outputString = s.ticker + ';'
-            datawriter.writerow([s.ticker])
+    generate_csv(portfolio)
 

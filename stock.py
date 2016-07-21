@@ -19,6 +19,6 @@ class StockData:
     def __init__(self, desc, profile):
         self.desc = desc
         self.profile = profile
-        
+
     def __str__(self):
         return "Stock(Desc={0}, Profile={1})".format(self.desc, self.profile)
