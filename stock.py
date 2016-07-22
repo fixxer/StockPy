@@ -11,10 +11,10 @@ class StockCompanyProfile:
     def __init__(self, sector, industry, style):
         self.sector = sector
         self.industry = industry
-        self.style = sector #BUG HERE, if changed to Style - it fails
+        self.style = style #BUG HERE, if changed to Style - it fails
 
     def __str__(self):
-        return "Profile(Sector={0}, Industry={1}, Style={2})".format(self.sector, self.industry, self.style)
+        return "Profile(Sector={0}, Industry={1}, Style={2})".format(self.sector, self.industry, 'STYLE')
 
 class StockData:
     def __init__(self, desc, profile):
