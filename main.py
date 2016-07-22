@@ -13,7 +13,7 @@ if __name__ == '__main__':
     #    StockDescription('ATVI','XNAS')
     #]
 
-    portfolio = create_portfolio(1)
+    portfolio = create_portfolio(True)
 
     # step2. load data
     for s in portfolio:
